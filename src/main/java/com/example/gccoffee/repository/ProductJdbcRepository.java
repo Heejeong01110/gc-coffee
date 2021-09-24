@@ -2,19 +2,16 @@ package com.example.gccoffee.repository;
 
 import com.example.gccoffee.model.Category;
 import com.example.gccoffee.model.Product;
-import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
-import java.nio.ByteBuffer;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import static com.example.gccoffee.Utils.toUUID;
-import static com.example.gccoffee.Utils.toLocalDateTime;
+import static com.example.gccoffee.JdbcUtils.toUUID;
+import static com.example.gccoffee.JdbcUtils.toLocalDateTime;
 
 public class ProductJdbcRepository implements ProductRepository{
     private final NamedParameterJdbcTemplate jdbcTemplate;
