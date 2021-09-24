@@ -25,7 +25,7 @@ class EmailTest {
     @Test
     @DisplayName("이메일 일치 여부를 확인 가능하다.")
     public void testEqualEamil() {
-        Email email = new Email("testEmail1@gmail.com");
+        Email email = new Email("testEmail@gmail.com");
         Email email2 = new Email("testEmail@gmail.com");
         assertEquals(email,email2);
     }
