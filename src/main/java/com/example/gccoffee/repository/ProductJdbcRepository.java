@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import static com.example.gccoffee.Utils.toUUID;
+import static com.example.gccoffee.Utils.toLocalDateTime;
+
 public class ProductJdbcRepository implements ProductRepository{
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
@@ -66,12 +69,5 @@ public class ProductJdbcRepository implements ProductRepository{
         return new Product(productId, productName, category, price, description, createdAt, updatedAt);
     };
 
-    static UUID toUUID(byte[] bytes){
-        ByteBuffer byteBuffer = ByteBuffer.wrap(bytes);
-        return new UUID(byteBuffer.getLong(), byteBuffer.getLong());
-    }
 
-    static LocalDateTime toLocalDateTime(Timestamp timestamp){
-        return timestamp !=null? timestamp.toLocalDateTime() : null;
-    }
 }
