@@ -1,6 +1,7 @@
 package com.example.gccoffee.model;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.UUID;
 
@@ -59,17 +60,17 @@ public class Order {
 
     public void setAddress(String address) {
         this.address = address;
-        this.updateAt = LocalDateTime.now();
+        this.updateAt = LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS);
     }
 
     public void setPostcode(String postcode) {
         this.postcode = postcode;
-        this.updateAt = LocalDateTime.now();
+        this.updateAt = LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS);
     }
 
     public void setOrderStatus(OrderStatus orderStatus) {
         this.orderStatus = orderStatus;
-        this.updateAt = LocalDateTime.now();
+        this.updateAt = LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS);
     }
 
 }
