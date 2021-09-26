@@ -54,7 +54,7 @@ public class Order {
         return createdAt;
     }
 
-    public LocalDateTime getUpdateAt() {
+    public LocalDateTime getUpdatedAt() {
         return updateAt;
     }
 
